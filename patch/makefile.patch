@@ -1,0 +1,20 @@
+diff --git a/Makefile b/Makefile
+index 3040e6c..45638bc 100644
+--- a/Makefile
++++ b/Makefile
+@@ -15,7 +15,6 @@ endif
+ 
+ all: 
+ 	$(MAKE) -C $(KDIR) KBUILD_EXTMOD=$(PWD) $(MODDEFS) modules NOSTDINC_FLAGS=$(DDDVB_INC)
+-	$(MAKE) -C apps
+ 
+ libdddvb:
+ 	$(MAKE) -C lib
+@@ -31,7 +30,6 @@ dep:
+ 
+ install: all
+ 	$(MAKE) -C $(KDIR) KBUILD_EXTMOD=$(PWD) INSTALL_MOD_PATH=$(MDIR) modules_install
+-	depmod $(kernelver)
+ 
+ clean:
+ 	rm -rf */.*.o.d */*.o */*.ko */*.mod.c */.*.cmd .tmp_versions Module* modules*
